@@ -1,4 +1,8 @@
 /env/
+<<<<<<< HEAD
 secret.sh
 /__pycache__/
 /**/__pycache__/
+=======
+secret.sh
+>>>>>>> 89ab16174b95abe62fe4a44c94bf04c65d73d005

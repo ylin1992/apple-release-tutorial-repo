@@ -2,9 +2,13 @@ import ssl
 import smtplib
 import os
 from config import SENDER_EMAIL, SENDER_PWD, SSL_PORT
+<<<<<<< HEAD
 from config import RECEIVER_EMAIL, SENDGRID_API_KEY
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
+=======
+from config import RECEIVER_EMAIL
+>>>>>>> 89ab16174b95abe62fe4a44c94bf04c65d73d005
 
 class Email:
     sender = None
@@ -52,6 +56,7 @@ class SSLEmail(Email):
             server.login(self.sender, SENDER_PWD)
             server.sendmail(self.sender, self.receiver, message)
 
+<<<<<<< HEAD
 class SendGridEmail(Email):
     def send_email(self):
         message = Mail(
@@ -70,4 +75,8 @@ class SendGridEmail(Email):
 
 if __name__ == '__main__':
     email = SendGridEmail(sender=SENDER_EMAIL, receiver=RECEIVER_EMAIL, subject="test subject", content="test contentgit a")
+=======
+if __name__ == '__main__':
+    email = SSLEmail(sender=SENDER_EMAIL, receiver=RECEIVER_EMAIL, subject="test subject", content="test contentgit a")
+>>>>>>> 89ab16174b95abe62fe4a44c94bf04c65d73d005
     email.send_email()
